@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CornerShop</string>
+    <string name="intro_title">Counters</string>
+    <string name="intro_subtitle">Capture cups of lattes, frapuccinos, or anything else that can be counted.</string>
+    <string name="intro_button_title">GET STARTED</string>
+    <string name="home_search_hint">Search Counters</string>
+    <string name="home_add_counter_button_title">ADD COUNTER</string>
+    <string name="create_counter_hint_text">Name</string>
+</resources>

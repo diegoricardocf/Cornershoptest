@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_default">16dp</dimen>
+    <dimen name="margin_top_default">16dp</dimen>
+    <dimen name="main_button_bottom_margin">20dp</dimen>
+    <dimen name="main_button_height">40dp</dimen>
+    <dimen name="main_button_width">200dp</dimen>
+    <dimen name="counter_row_button_width_height">25dp</dimen>
+    <dimen name="counter_row_button_margin">10dp</dimen>
+    <dimen name="lottie_animation_height_width">250dp</dimen>
+    <dimen name="intro_animation_margin">30dp</dimen>
+</resources>

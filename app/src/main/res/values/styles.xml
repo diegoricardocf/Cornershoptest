@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MainButtonStyle">
+        <item name="android:background">@drawable/button_background</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="TextViewTitlestyle">
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="TextViewCardTitle">
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="TextViewCardCountNumber">
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:textSize">19sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="TextViewSubtitlestyle">
+        <item name="android:textColor">@color/sec_text</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+</resources>
