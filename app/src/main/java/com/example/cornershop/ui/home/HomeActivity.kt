@@ -57,31 +57,18 @@ class HomeActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListener {
 
     private fun initObservables() {
         viewModel.getCounters().observe(this) { counters ->
-            homeAdapter?.items = counters
-            if(binding.homeSwipeToRefresh.isRefreshing){
-                binding.homeSwipeToRefresh.isRefreshing = false
-            }
+            updateRecycler(counters)
         }
         viewModel.getShowProgress().observe(this) { shouldShow ->
              animateLoading(shouldShow)
         }
 
         viewModel.getTotalTimes().observe(this) { totalTimes ->
-            if(totalTimes == 0){
-                binding.homeTotalCountersTextview.visibility = View.GONE
-            }else{
-                binding.homeTotalCountersTextview.visibility = View.VISIBLE
-            }
-            binding.homeTotalCountersTextview.text = totalTimes.toString().plus(" items")
+            updateTotalTimes(totalTimes)
         }
 
         viewModel.getTotalCounters().observe(this) { totalCounters ->
-            binding.homeTotalItemsTextview.text = totalCounters.toString().plus(" times")
-            if(totalCounters == 0){
-                binding.homeTotalItemsTextview.visibility = View.GONE
-            }else{
-                binding.homeTotalItemsTextview.visibility = View.VISIBLE
-            }
+           updateTotalCounters(totalCounters)
         }
 
         viewModel.getShowNoContentView().observe(this) { shouldShowNoContentView ->
@@ -92,6 +79,31 @@ class HomeActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListener {
         viewModel.getMessageError().observe(this){ errorMesage ->
             binding.homeSwipeToRefresh.isRefreshing = false
             Toast.makeText(this,errorMesage,Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun updateTotalCounters(totalCounters: Int) {
+        binding.homeTotalItemsTextview.text = totalCounters.toString().plus(" times")
+        if(totalCounters == 0){
+            binding.homeTotalItemsTextview.visibility = View.GONE
+        }else{
+            binding.homeTotalItemsTextview.visibility = View.VISIBLE
+        }
+    }
+
+    private fun updateTotalTimes(totalTimes: Int) {
+        if(totalTimes == 0){
+            binding.homeTotalCountersTextview.visibility = View.GONE
+        }else{
+            binding.homeTotalCountersTextview.visibility = View.VISIBLE
+        }
+        binding.homeTotalCountersTextview.text = totalTimes.toString().plus(" items")
+    }
+
+    private fun updateRecycler(counters: List<Counter>) {
+        homeAdapter?.items = counters
+        if(binding.homeSwipeToRefresh.isRefreshing){
+            binding.homeSwipeToRefresh.isRefreshing = false
         }
     }
 
