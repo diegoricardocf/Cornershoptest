@@ -27,6 +27,7 @@
             android:gravity="center|start"
             android:hint="@string/home_search_hint"
             android:importantForAutofill="no"
+            android:imeOptions="actionDone"
             android:inputType="text"
             android:singleLine="true"
             app:layout_constraintEnd_toEndOf="parent"
